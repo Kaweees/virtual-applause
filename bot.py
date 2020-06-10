@@ -76,6 +76,13 @@ async def on_message(message):
         claps.put_nowait(crabs[0])
         crabs.append(crabs.pop(0))
         await message.add_reaction('🦀')
+    if message.content.lower().find("i don't like sand") != -1:
+        channel = message.channel
+        await message.add_reaction("🏖️")
+        await message.add_reaction("⏳")
+        await message.add_reaction("🏜️")
+        filename = "sand.jpg"
+        await channel.send(file=discord.File(filename))
     await bot.process_commands(message)
 
 
